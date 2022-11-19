@@ -1,10 +1,6 @@
-class Api::BikeSerializer < ActiveModel::Serializer
-  attribute :id
+class BikeSerializer < ActiveModel::Serializer
   attribute :name
   attribute :country
-  attribute :maker
 
-  def maker
-    object.maker.name
-  end
+  belongs_to :maker
 end
